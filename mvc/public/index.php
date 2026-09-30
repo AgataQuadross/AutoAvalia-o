@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+/**
+ * Ponto de Entrada da Aplicação MVC (Front Controller)
+ * 
+ * Funcionamento:
+ * 1. Carrega os Modelos (Usuario, Aluno, Instrutor) com encapsulamento e herança.
+ * 2. Carrega o ControllerUsuario que gerencia as validações e requisições.
+ * 3. Cria o objeto controlador e inicia a montagem dos dados para a View.
+ */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uso de MVC</title>
+require_once __DIR__ . '/../app/models/usuario.php';
+require_once __DIR__ . '/../app/controllers/ControllerUsuario.php';
 
-</head>
-
-<body>
-
-</body>
-
-</html>
+// Inicializa o Controller e executa o fluxo principal
+$controlador = new ControllerUsuario();
+$controlador->iniciar();
