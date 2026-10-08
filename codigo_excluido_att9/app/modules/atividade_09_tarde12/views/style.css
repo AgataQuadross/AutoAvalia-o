@@ -1,0 +1,338 @@
+/**
+ * Estilos Atividade 09 - The Farmer Edu (Squad 12)
+ * Tema: Escuro com destaques em Rosa Pastel e Verde Menta
+ */
+
+:root {
+    --bg-principal: #0d1315;
+    --bg-cartao: #162024;
+    --bg-cartao-destaque: #1b282d;
+    --bg-terminal: #090e10;
+    --borda-suave: #283a42;
+    --borda-destaque: #3b535e;
+    --rosa-pastel: #ffb7c5;
+    --rosa-brilho: #f8a5c2;
+    --menta-claro: #a8e6cf;
+    --menta-destaque: #55efc4;
+    --texto-principal: #f3f6f7;
+    --texto-secundario: #a4b4bc;
+    --erro: #ff7675;
+    --sucesso: #55efc4;
+    --aviso: #ffeaa7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+.conteiner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+header.topo-floral {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--borda-suave);
+}
+
+.emblema {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 183, 197, 0.12);
+    color: var(--rosa-pastel);
+    border: 1px solid rgba(255, 183, 197, 0.3);
+    border-radius: 999px;
+    padding: 0.35rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.1rem;
+    color: var(--rosa-pastel);
+    margin-bottom: 0.4rem;
+}
+
+h1 span {
+    color: var(--menta-claro);
+}
+
+p.subtitulo {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* NAVEGAÇÃO */
+.navegacao-abas {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-aba {
+    text-decoration: none;
+    padding: 0.55rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-aba.ativo {
+    background: linear-gradient(135deg, rgba(255, 183, 197, 0.25), rgba(168, 230, 207, 0.25));
+    border: 1px solid var(--rosa-pastel);
+    color: var(--rosa-pastel);
+}
+
+.btn-aba:not(.ativo) {
+    background: var(--bg-cartao);
+    border: 1px solid var(--borda-suave);
+    color: var(--texto-secundario);
+}
+
+.btn-aba:hover:not(.ativo) {
+    border-color: var(--menta-claro);
+    color: var(--menta-claro);
+}
+
+/* GRADE E CARTÕES */
+.grade-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 820px) {
+    .grade-dupla {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cartao {
+    background: var(--bg-cartao);
+    border: 1px solid var(--borda-suave);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.cartao-teste {
+    border-color: rgba(85, 239, 196, 0.35);
+    background: linear-gradient(180deg, #162024 0%, #142427 100%);
+}
+
+.titulo-card {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--rosa-pastel);
+}
+
+.cartao-teste .titulo-card {
+    color: var(--menta-destaque);
+}
+
+/* FORMULÁRIOS E CAMPOS */
+.campo {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--texto-secundario);
+}
+
+input, select {
+    width: 100%;
+    background: #0d1416;
+    border: 1px solid var(--borda-suave);
+    border-radius: 8px;
+    padding: 0.65rem 0.85rem;
+    color: var(--texto-principal);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: var(--rosa-pastel);
+}
+
+button.btn-enviar {
+    width: 100%;
+    background: linear-gradient(135deg, #ffb7c5, #f8a5c2);
+    color: #12181a;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(255, 183, 197, 0.25);
+    margin-top: 0.3rem;
+}
+
+button.btn-enviar.menta {
+    background: linear-gradient(135deg, #a8e6cf, #55efc4);
+    box-shadow: 0 4px 12px rgba(85, 239, 196, 0.25);
+}
+
+button.btn-enviar:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+/* ALERTAS E BADGES */
+.alerta {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.alerta.sucesso {
+    background: rgba(85, 239, 196, 0.15);
+    border: 1px solid var(--sucesso);
+    color: var(--sucesso);
+}
+
+.alerta.aviso {
+    background: rgba(255, 234, 167, 0.15);
+    border: 1px solid var(--aviso);
+    color: var(--aviso);
+}
+
+.alerta.erro {
+    background: rgba(255, 118, 117, 0.15);
+    border: 1px solid var(--erro);
+    color: var(--erro);
+}
+
+.badge-status {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-passou {
+    background: rgba(85, 239, 196, 0.2);
+    color: var(--menta-destaque);
+    border: 1px solid var(--menta-destaque);
+}
+
+.badge-tag {
+    background: rgba(255, 183, 197, 0.15);
+    color: var(--rosa-pastel);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* CAIXAS DE CÓDIGO E LINHAS DE CONFERÊNCIA */
+.caixa-codigo {
+    background: var(--bg-terminal);
+    border: 1px solid #1e2c31;
+    border-radius: 8px;
+    padding: 0.85rem;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.84rem;
+    color: var(--menta-claro);
+    margin-top: 0.8rem;
+    overflow-x: auto;
+}
+
+.item-conferencia {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0;
+    border-bottom: 1px dashed var(--borda-suave);
+    font-size: 0.88rem;
+}
+
+.item-conferencia:last-child {
+    border-bottom: none;
+}
+
+.item-conferencia span:first-child {
+    color: var(--texto-secundario);
+}
+
+.item-conferencia span:last-child {
+    font-weight: 600;
+    color: var(--texto-principal);
+}
+
+/* BOTÕES DE PAYLOAD SQL INJECTION */
+.painel-payloads {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--borda-suave);
+}
+
+.painel-payloads p {
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+    margin-bottom: 0.5rem;
+}
+
+.grade-botoes-payload {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.btn-payload {
+    background: #111a1d;
+    border: 1px solid var(--borda-destaque);
+    color: var(--menta-claro);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-family: 'Consolas', monospace;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-payload:hover {
+    background: rgba(255, 183, 197, 0.15);
+    border-color: var(--rosa-pastel);
+    color: var(--rosa-pastel);
+}

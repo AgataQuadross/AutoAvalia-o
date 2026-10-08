@@ -1,0 +1,5 @@
+SQUADS*
+*.bat
+create_squads_gh.js
+schema_backup.sql
+.env
